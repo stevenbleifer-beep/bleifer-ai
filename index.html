@@ -69,14 +69,47 @@
 
   <img src="img/rainbow.gif" class="hr" alt="---">
 
-  <p class="mailto">
-    <img src="img/mail.gif" width="40" height="28" alt="email">
-    <a href="mailto:stevenbleifer@gmail.com?subject=Hello%20from%20bleifer.ai">Sign my guestbook &mdash; drop me a line!</a>
+  <h3>&#9642; SIGN MY GUESTBOOK &#9642; <img src="img/new.gif" width="46" height="18" alt="new"></h3>
+  <p class="gb-intro">
+    <img src="img/mail.gif" width="40" height="28" alt="">
+    Leave a note! Entries are public and visible to all visitors.
   </p>
+
+  <table class="box gb-box" cellpadding="10" cellspacing="0" border="0"><tr><td>
+    <div class="gb-field">
+      <label for="gb-name">Your Name:</label><br>
+      <input type="text" id="gb-name" maxlength="30" autocomplete="off">
+    </div>
+
+    <div class="gb-field">
+      <label for="gb-message">Your Message:</label><br>
+      <textarea id="gb-message" maxlength="200" rows="4"></textarea>
+    </div>
+
+    <div class="gb-hp" aria-hidden="true">
+      <label>Website: <input type="text" id="gb-website" tabindex="-1" autocomplete="off"></label>
+    </div>
+
+    <p class="gb-error" id="gb-error"></p>
+
+    <p class="gb-actions">
+      <button class="gb-btn" type="button" id="gb-submit" onclick="submitGuestbook()">Sign guestbook</button>
+    </p>
+  </td></tr></table>
+
+  <h3>&#9642; RECENT ENTRIES &#9642;</h3>
+  <div id="gb-entries"><p class="feed-loading">Loading entries&hellip;</p></div>
+  <p id="gb-empty" class="gb-note" style="display:none;">No entries yet. Be the first to sign!</p>
+
+  <img src="img/rainbow.gif" class="hr" alt="---">
 
   <div class="counter">
     <span class="counter-label">You are visitor number</span><br>
-    <span class="odometer" id="hits">00000000</span>
+    <span class="odometer" id="hits">00000000</span><br>
+    <span class="live">
+      <span class="blink">&#9679;</span>
+      <b id="live-now">1</b> surfer(s) online right now
+    </span>
   </div>
 
   <p class="badges">
@@ -96,18 +129,14 @@
 
 </center>
 
+<!-- Firebase: guestbook + live visitor counts -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-check-compat.js"></script>
+<script src="guestbook.js"></script>
+
 <script>
-// Classic 1996 hit counter -- per-browser, stored locally. No server, no tracking.
 (function () {
-  var KEY = 'bleifer_ai_hits', BASE = 1024, n;
-  try {
-    n = parseInt(localStorage.getItem(KEY) || '0', 10) + 1;
-    localStorage.setItem(KEY, String(n));
-  } catch (e) {
-    n = 1; // private browsing -- just show the base count
-  }
-  var el = document.getElementById('hits');
-  if (el) el.textContent = String(BASE + n).padStart(8, '0');
   var yr = document.getElementById('yr');
   if (yr) yr.textContent = new Date().getFullYear();
 })();
