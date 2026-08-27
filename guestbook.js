@@ -229,7 +229,6 @@
 
     /* ---- live visitor counts ------------------------------------------ */
 
-    var BASE = 1024;              // so the odometer doesn't start at zero
     var STALE = 90 * 1000;        // a heartbeat older than this is a dead tab
     var viewsEl = document.getElementById('hits');
     var liveEl = document.getElementById('live-now');
@@ -242,7 +241,7 @@
     // Total page views. Counted once per browser session.
     var viewsRef = db.ref('bleiferAi/views');
     viewsRef.on('value', function (s) {
-        if (viewsEl) viewsEl.textContent = String((s.val() || 0) + BASE).padStart(8, '0');
+        if (viewsEl) viewsEl.textContent = String(s.val() || 0).padStart(8, '0');
     }, function () {
         if (viewsEl) viewsEl.textContent = '--------';
     });
