@@ -39,6 +39,27 @@
 
     var db = firebase.database();
 
+    // Ask App Check directly why it is unhappy. reCAPTCHA refusing the domain
+    // produces appCheck/recaptcha-error here, which is otherwise only visible
+    // in the browser console.
+    function diag(msg) {
+        var c = document.getElementById('gb-entries');
+        if (!c) return;
+        var p = document.createElement('p');
+        p.className = 'gb-note';
+        p.textContent = msg;
+        c.appendChild(p);
+    }
+    try {
+        appCheck.getToken(true)
+            .then(function () { /* token issued -- App Check is fine */ })
+            .catch(function (e) {
+                diag('App Check: ' + (e.code || e.message || String(e)));
+            });
+    } catch (e) {
+        diag('App Check: ' + (e.message || String(e)));
+    }
+
     var INVISIBLE_RE = /[̀-ͯ​‌‍‎‏⁠⁡⁢⁣⁤﻿­͏؜᠎  ‪-‮⁦-⁩￹-￻]/g;
     function stripInvisible(s) { return s.replace(INVISIBLE_RE, ''); }
 
