@@ -242,8 +242,9 @@
     var viewsRef = db.ref('bleiferAi/views');
     viewsRef.on('value', function (s) {
         if (viewsEl) viewsEl.textContent = String(s.val() || 0).padStart(8, '0');
-    }, function () {
-        if (viewsEl) viewsEl.textContent = '--------';
+    }, function (e) {
+        viewsUnavailable();
+        window.__baViewsError = (e && (e.code || e.message)) || 'unknown';
     });
 
 
@@ -311,11 +312,23 @@
         me.remove();
     });
 
-    // If the entry list never populates, say so instead of spinning forever.
+    // Probe the guestbook explicitly so we can report *why* it failed rather
+    // than leaving a generic message. Diagnostic detail only appears on
+    // failure; a working page never shows it.
+    var probeDone = false;
+    db.ref('guestbook').limitToLast(1).once('value')
+        .then(function () { probeDone = true; })
+        .catch(function (e) {
+            probeDone = true;
+            offline('Guestbook error: ' + (e.code || e.message || String(e)));
+        });
+
     setTimeout(function () {
         var c = document.getElementById('gb-entries');
-        if (c && /Loading entries/.test(c.textContent)) {
-            offline('Couldn\'t load the guestbook right now. Please try again later.');
+        if (!probeDone) {
+            offline('Guestbook error: no response from Firebase (request hung).');
+        } else if (c && /Loading entries/.test(c.textContent)) {
+            offline('Guestbook error: connected, but no entries came back.');
         }
     }, 8000);
 
