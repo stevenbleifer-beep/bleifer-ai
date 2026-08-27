@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLEIFER.AI -- Under Construction!</title>
+<meta name="description" content="bleifer.ai is under construction. Please check back soon!">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="img/globe.gif">
+</head>
+<body>
+
+<div class="marquee-bar">
+  <marquee scrollamount="6" behavior="scroll" direction="left">
+    *** WELCOME TO BLEIFER.AI *** THIS SITE IS UNDER CONSTRUCTION *** PLEASE CHECK BACK SOON ***
+    THANK YOU FOR VISITING *** BOOKMARK THIS PAGE *** &lt;/&gt; HAND CODED *** NO COOKIES, NO TRACKERS ***
+  </marquee>
+</div>
+
+<center>
+
+<table class="frame" cellpadding="0" cellspacing="0" border="0"><tr><td>
+<table class="inner" cellpadding="14" cellspacing="0" border="0" width="100%"><tr><td align="center">
+
+  <img src="img/globe.gif" width="72" height="72" alt="spinning globe" class="globe">
+  <h1>BLEIFER<span class="dot">.</span>AI</h1>
+  <img src="img/globe.gif" width="72" height="72" alt="spinning globe" class="globe">
+
+  <p class="tagline">
+    <span class="blink">&#9658;</span>
+    The official home page of Steven Bleifer on the World Wide Web
+    <span class="blink">&#9668;</span>
+  </p>
+
+  <img src="img/rainbow.gif" class="hr" alt="---">
+
+  <p>
+    <img src="img/worker.gif" width="44" height="52" alt="worker digging" class="worker">
+    <img src="img/construction.gif" width="360" height="46" alt="Under Construction" class="banner">
+    <img src="img/worker.gif" width="44" height="52" alt="worker digging" class="worker flip">
+  </p>
+
+  <table class="box" cellpadding="12" cellspacing="0" border="0"><tr><td>
+    <h2>&#9733; COMING SOON &#9733; <img src="img/new.gif" width="46" height="18" alt="new"></h2>
+    <p>
+      Pardon our dust! This site is currently being built. There is
+      <b>nothing here yet</b> &mdash; but there will be.
+    </p>
+    <p>
+      In the meantime, you can find me at the pages listed below.
+    </p>
+  </td></tr></table>
+
+  <img src="img/rainbow.gif" class="hr" alt="---">
+
+  <h3>&#9642; MY OTHER PAGES &#9642;</h3>
+  <table class="links" cellpadding="6" cellspacing="0" border="0">
+    <tr>
+      <td>&#9654;</td>
+      <td><a href="https://www.stevenbleifer.com">stevenbleifer.com</a></td>
+      <td class="desc">Home page, projects &amp; resume</td>
+    </tr>
+    <tr>
+      <td>&#9654;</td>
+      <td><a href="https://bleifer.net">bleifer.net</a></td>
+      <td class="desc">Half marathon training tracker</td>
+    </tr>
+    <tr>
+      <td>&#9654;</td>
+      <td><a href="https://github.com/stevenbleifer-beep">github.com/stevenbleifer-beep</a></td>
+      <td class="desc">Source code &amp; repositories</td>
+    </tr>
+  </table>
+
+  <img src="img/rainbow.gif" class="hr" alt="---">
+
+  <p class="mailto">
+    <img src="img/mail.gif" width="40" height="28" alt="email">
+    <a href="mailto:stevenbleifer@gmail.com?subject=Hello%20from%20bleifer.ai">Sign my guestbook &mdash; drop me a line!</a>
+  </p>
+
+  <div class="counter">
+    <span class="counter-label">You are visitor number</span><br>
+    <span class="odometer" id="hits">00000000</span>
+  </div>
+
+  <p class="badges">
+    <img src="img/badge_800.gif" width="88" height="31" alt="Best viewed at 800x600">
+    <img src="img/badge_html.gif" width="88" height="31" alt="Made with plain HTML">
+    <img src="img/badge_mac.gif" width="88" height="31" alt="Hand coded on a Macintosh">
+  </p>
+
+  <p class="footer">
+    This page is best viewed with a monitor and eyes.<br>
+    Last updated: <span id="updated">August 27, 2026</span><br>
+    Copyright &copy; <span id="yr">2026</span> Steven Bleifer. All rights reserved.
+  </p>
+
+</td></tr></table>
+</td></tr></table>
+
+</center>
+
+<script>
+// Classic 1996 hit counter -- per-browser, stored locally. No server, no tracking.
+(function () {
+  var KEY = 'bleifer_ai_hits', BASE = 1024, n;
+  try {
+    n = parseInt(localStorage.getItem(KEY) || '0', 10) + 1;
+    localStorage.setItem(KEY, String(n));
+  } catch (e) {
+    n = 1; // private browsing -- just show the base count
+  }
+  var el = document.getElementById('hits');
+  if (el) el.textContent = String(BASE + n).padStart(8, '0');
+  var yr = document.getElementById('yr');
+  if (yr) yr.textContent = new Date().getFullYear();
+})();
+</script>
+
+</body>
+</html>

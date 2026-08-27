@@ -1,0 +1,138 @@
+/* bleifer.ai -- placeholder page, ca. 1996 */
+
+body {
+  background: #0a0a2a url("img/stars.gif") repeat;
+  color: #e8e8ff;
+  font-family: "Comic Sans MS", "Chalkboard SE", "Comic Neue", cursive, sans-serif;
+  font-size: 15px;
+  margin: 0;
+  padding: 0 0 40px 0;
+}
+
+a         { color: #ffe14d; }
+a:visited { color: #d9a3ff; }
+a:hover   { color: #ffffff; background: #2a2a6a; }
+
+/* ---- scrolling news bar ------------------------------------------------ */
+.marquee-bar {
+  background: #000080;
+  border-bottom: 3px ridge #6a6ad0;
+  color: #ffe14d;
+  font-family: "Courier New", monospace;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 5px 0;
+  margin-bottom: 22px;
+}
+
+/* ---- outer chrome frame ------------------------------------------------ */
+.frame {
+  background: #6a6ad0;
+  border: 4px ridge #b0b0f0;
+  margin: 0 auto;
+  max-width: 660px;
+}
+.inner {
+  background: #12123a;
+  border: 3px inset #4a4a9a;
+}
+
+/* ---- headings ---------------------------------------------------------- */
+h1 {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 14px;
+  font-family: Impact, "Arial Black", "Haettenschweiler", sans-serif;
+  font-size: 54px;
+  letter-spacing: 2px;
+  background: linear-gradient(#fff9c4, #ffd400 40%, #ff8a00 60%, #c04000);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: #ffd400;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 3px 3px 0 rgba(0, 0, 0, .6);
+  /* fallback for browsers without background-clip:text */
+  paint-order: stroke fill;
+}
+@supports not ((-webkit-background-clip: text) or (background-clip: text)) {
+  h1 { -webkit-text-fill-color: #ffd400; color: #ffd400; }
+}
+h1 .dot { color: #ff3b3b; -webkit-text-fill-color: #ff3b3b; }
+
+h2 {
+  color: #4dff88;
+  font-size: 21px;
+  margin: 0 0 10px 0;
+}
+h3 {
+  color: #7fd4ff;
+  font-size: 17px;
+  letter-spacing: 2px;
+  margin: 6px 0;
+}
+
+.globe   { vertical-align: middle; }
+.tagline { color: #b9b9ff; font-size: 14px; margin: 12px 0 4px; }
+
+/* ---- animated bits ----------------------------------------------------- */
+.blink { animation: blink 1s steps(1, end) infinite; color: #ff3b3b; }
+@keyframes blink { 50% { opacity: 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .blink { animation: none; }
+}
+
+.hr     { display: block; margin: 18px auto; max-width: 100%; height: auto; }
+.worker { vertical-align: middle; }
+.flip   { transform: scaleX(-1); }
+.banner { vertical-align: middle; margin: 0 6px; max-width: 100%; height: auto; }
+
+/* ---- content box ------------------------------------------------------- */
+.box {
+  background: #1c1c50;
+  border: 3px outset #5a5ac0;
+  margin: 6px auto;
+  max-width: 470px;
+  text-align: center;
+}
+.box p { margin: 8px 0; line-height: 1.5; }
+
+/* ---- link table -------------------------------------------------------- */
+.links       { margin: 4px auto 0; text-align: left; }
+.links td    { font-size: 14px; }
+.links .desc { color: #9a9ad8; font-size: 13px; }
+
+.mailto { margin: 14px 0; }
+.mailto img { vertical-align: middle; margin-right: 8px; }
+
+/* ---- hit counter ------------------------------------------------------- */
+.counter { margin: 20px 0 14px; }
+.counter-label { color: #b9b9ff; font-size: 13px; }
+.odometer {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 5px 10px;
+  background: #000;
+  border: 3px inset #888;
+  color: #33ff33;
+  font-family: "Courier New", monospace;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 5px;
+}
+
+.badges img { margin: 0 4px; vertical-align: middle; }
+
+.footer {
+  color: #8a8ac8;
+  font-size: 12px;
+  line-height: 1.7;
+  margin-top: 18px;
+}
+
+/* ---- small screens (a concession the real 1996 web never made) --------- */
+@media (max-width: 700px) {
+  h1 { font-size: 36px; margin: 8px; }
+  .globe { width: 48px; height: 48px; }
+  .worker { display: none; }
+}
