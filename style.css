@@ -105,22 +105,6 @@ h3 {
 .mailto { margin: 14px 0; }
 .mailto img { vertical-align: middle; margin-right: 8px; }
 
-/* ---- hit counter ------------------------------------------------------- */
-.counter { margin: 20px 0 14px; }
-.counter-label { color: #b9b9ff; font-size: 13px; }
-.odometer {
-  display: inline-block;
-  margin-top: 6px;
-  padding: 5px 10px;
-  background: #000;
-  border: 3px inset #888;
-  color: #33ff33;
-  font-family: "Courier New", monospace;
-  font-size: 24px;
-  font-weight: bold;
-  letter-spacing: 5px;
-}
-
 .badges img { margin: 0 4px; vertical-align: middle; }
 
 .footer {
@@ -136,79 +120,3 @@ h3 {
   .globe { width: 48px; height: 48px; }
   .worker { display: none; }
 }
-
-/* ---- guestbook --------------------------------------------------------- */
-.gb-intro { color: #b9b9ff; font-size: 13px; margin: 6px 0 10px; }
-.gb-intro img { vertical-align: middle; margin-right: 6px; }
-
-.gb-box { max-width: 470px; text-align: left; }
-.gb-field { margin-bottom: 10px; }
-.gb-field label {
-  color: #7fd4ff;
-  font-size: 12px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.gb-field input[type="text"],
-.gb-field textarea {
-  width: 100%;
-  box-sizing: border-box;
-  margin-top: 4px;
-  padding: 5px 6px;
-  background: #000030;
-  border: 2px inset #6a6ad0;
-  color: #d8ffd8;
-  font-family: "Courier New", monospace;
-  font-size: 14px;
-}
-.gb-field textarea { resize: vertical; }
-.gb-field input[type="text"]:focus,
-.gb-field textarea:focus { outline: 2px solid #ffe14d; }
-
-/* honeypot -- hidden from people, tempting to bots */
-.gb-hp { position: absolute; left: -9999px; opacity: 0; height: 0; overflow: hidden; }
-
-.gb-actions { margin: 12px 0 0; text-align: center; }
-.gb-btn {
-  background: #c0c0c0;
-  border: 3px outset #e8e8e8;
-  color: #000;
-  cursor: pointer;
-  font-family: "Comic Sans MS", cursive, sans-serif;
-  font-size: 14px;
-  font-weight: bold;
-  padding: 5px 16px;
-}
-.gb-btn:active  { border-style: inset; }
-.gb-btn:disabled { color: #666; cursor: default; border-style: inset; }
-
-.gb-error {
-  color: #ff6a6a;
-  display: none;
-  font-size: 13px;
-  margin: 8px 0 0;
-  text-align: center;
-}
-.gb-note, .feed-loading { color: #9a9ad8; font-size: 13px; }
-
-#gb-entries { margin: 0 auto; max-width: 470px; text-align: left; }
-.gb-entry {
-  background: #1c1c50;
-  border: 2px ridge #4a4a9a;
-  margin-bottom: 8px;
-  padding: 8px 10px;
-}
-.gb-entry .gb-name { color: #4dff88; font-weight: bold; }
-.gb-entry .gb-date { color: #9a9ad8; font-size: 11px; margin-left: 8px; }
-.gb-entry .gb-message {
-  color: #e8e8ff;
-  font-size: 14px;
-  margin: 5px 0 0;
-  overflow-wrap: anywhere;
-}
-
-/* ---- live "who's here now" line ---------------------------------------- */
-.live { color: #4dff88; font-size: 13px; }
-.live .blink { color: #4dff88; }
-.live b { color: #ffe14d; font-size: 15px; }
